@@ -56,7 +56,11 @@
     font-size: 3rem;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
     line-height: 1;
-    @include transition(top 0.5s $g-transition-timing);
+    > a {
+      color: inherit;
+      text-decoration: inherit;
+      @include transition(top 0.5s $g-transition-timing);
+    }
     @media screen and (min-width: $g-breakpoint-sp) {
       body.is-scroll & {
         top: 50%;

@@ -22,6 +22,11 @@
       background-color: $g-color-white;
       overflow: hidden;
     }
+    @media screen and (min-width: $g-breakpoint-sp) and (max-width: $g-breakpoint-tb) {
+      padding-right: 1rem ;
+      padding-left: 1rem ;
+      width: 14rem;
+    }
     @mixin cando($skill, $size) {
       &#{&}--#{$skill}::before {
         background-image: url('/images/skill/skill_#{$skill}.svg');
@@ -34,8 +39,10 @@
     @include cando(sass, 8.4rem);
     @include cando(style, 11rem);
     @include cando(document, 11rem);
-    @include cando(device, 11rem);
+    @include cando(animation, 11rem);
+    @include cando(responsive, 11rem);
     @include cando(website, 11rem);
+    @include cando(device, 11rem);
     @include cando(analyze, 11rem);
     @include cando(teacher, 11rem);
   }

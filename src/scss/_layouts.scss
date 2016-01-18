@@ -54,6 +54,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    right: 0;
     margin-top: 0;
     width: 100%;
     z-index: 2;
@@ -66,7 +67,6 @@
       top: -1rem;
       bottom: auto;
       margin-top: 1rem;
-      width: 100%;
       overflow: hidden;
       @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
     }
