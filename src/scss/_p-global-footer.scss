@@ -1,0 +1,10 @@
+// ==================================================
+// p-global-footer
+// ==================================================
+.p-global-footer {
+  margin: $g-margin-bottom 0 ($g-margin-bottom * 2);
+  text-align: center;
+  &__copyright {
+    font-weight: $g-font-weight-thin;
+  }
+}

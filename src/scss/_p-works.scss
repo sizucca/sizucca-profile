@@ -1,0 +1,412 @@
+// ==================================================
+// p-works
+// ==================================================
+.p-works {
+  display: block;
+  @include clearfix;
+}
+
+// 一覧表示
+// ==================================================
+.p-works.is-list {
+  // p-works
+  .p-works {
+    &__item {
+      width: 100%;
+      margin-bottom: 2rem;
+      @media screen and (min-width: 480px) {
+        width: 49%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        float: left;
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+      @media screen and (min-width: $g-breakpoint-tb) {
+        width: 32%;
+        &:nth-child(2n) {
+          margin-right: 2%;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  // p-work
+  .p-work {
+    $this: '.p-work';
+    $height: 65%;
+    
+    display: block;
+    cursor: pointer;
+    position: relative;
+    padding-top: $height;
+    border-radius: $g-border-radius;
+    overflow: hidden;
+    text-decoration: inherit;
+    background-color: $g-color-white;
+    @include box-shadow(0 1px 1px 1px rgba($g-color-black, 0.08));
+    &__header {
+      padding: 0.8em;
+    }
+    &__year {
+      display: block;
+      height: 1.6em;
+      overflow: hidden;
+      color: rgba($g-text-color, 0.7);
+      font-size: 1.4rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      line-height: 1.6em;
+    }
+    &__heading {
+      display: block;
+      height: 1.6em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $g-text-color;
+      white-space: nowrap;
+      line-height: 1.6em;
+      @include transition(0.5s $g-transition-timing);
+    }
+    &:hover #{$this}__heading {
+      color: $g-key-color;
+    }
+    &__caption {
+      color: $g-text-color;
+      font-size: 1.4rem;
+      line-height: 1.4;
+    }
+    &:hover #{$this}__caption {
+      color: $g-key-color;
+    }
+    &__image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1;
+      padding-top: $height;
+      border-bottom: 1px solid rgba($g-color-black, 0.15);
+      overflow: hidden;
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: $g-border-radius $g-border-radius 0 0;
+      }
+    }
+    &:hover #{$this}__image img {
+      opacity: 1;
+      @include filter(blur(5px) grayscale(0.2));
+      @include animation(image-flash 1s);
+    }
+    &__image::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      border-radius: $g-border-radius $g-border-radius 0 0;
+      content: '';
+      opacity: 0;
+      background-color: $g-color-black;
+    }
+    &:hover #{$this}__image::after {
+      opacity: 0.6;
+      @include animation(image-cover 0.5s);
+    }
+    @mixin work-for($class, $content){
+      &__for-#{$class} {
+        position: absolute;
+        top: 42%;
+        left: 10%;
+        z-index: 3;
+        padding: 0.7em;
+        border: 2px solid $g-color-white;
+        border-radius: $g-border-radius;
+        width: 80%;
+        color: $g-color-white;
+        text-align: center;
+        line-height: 1;
+        opacity: 0;
+        @include transition(0.5s $g-transition-timing);
+        &::after {
+          content: $content;
+        }
+      }
+      &:hover #{$this}__for-#{$class} {
+        top: 40%;
+        opacity: 1;
+      }
+      &:hover #{$this}__for-#{$class}:hover {
+        background-color: rgba($g-color-white, 0.3);
+      }
+    }
+    @include work-for(detail, 'View Details');
+    @include work-for(pdf, 'View PDF');
+    &__detail {
+      display: none; 
+    }
+  }
+}
+@include keyframes(image-flash) {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+    @include filter(blur(5px) grayscale(0.2));
+  }
+}
+@include keyframes(image-cover) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+// 詳細の背景
+// ==================================================
+.p-works-outside {
+  visibility: hidden;
+  position: fixed;
+  top: 80%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  opacity: 0;
+  background-color: rgba($g-color-black, 0.8);
+  @include transition(0.3s $g-transition-timing);
+  body.is-detail-visible & {
+    visibility: visible;
+    top: 0;
+    opacity: 1;
+  }
+}
+
+// 詳細の前後移動
+// ==================================================
+body {
+  @mixin move($arg) {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    #{$arg}: 0;
+    bottom: 0;
+    z-index: 11;
+    cursor: pointer;
+    width: 50%;
+    color: $g-color-white;
+    font-size: 4rem;
+    line-height: 1;
+    opacity: 0;
+    @include transition(opacity 0.5s $g-transition-timing);
+    &.is-disabled {
+      display: none;
+    }
+    &::before {
+      position: absolute;
+      top: 50%;
+      #{$arg}: 0.5rem;
+      margin-top: -1em;
+      width: 1em;
+      height: 1em;
+      text-align: center;
+      text-shadow: 0 0 2px rgba($g-color-black, 0.5);
+      @include glyph(entypo, chevron-thin-#{$arg});
+    }
+    @media screen and (max-width: $g-breakpoint-sp) {
+      z-index: 13;
+      top: 50%;
+      margin-top: -1em;
+      width: 1em;
+      height: 1em;
+      &::before {
+        top: 0;
+        margin-top: 0;
+      }
+    }
+  }
+  .p-works-prev {
+    @include move(left);
+  }
+  .p-works-next {
+    @include move(right);
+  }
+}
+body.is-detail-visible {
+  .p-works-prev,
+  .p-works-next {
+    visibility: visible;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// 詳細の閉じる
+// ==================================================
+.p-works-close {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 13;
+  cursor: pointer;
+  padding: 1rem;
+  width: 1em;
+  height: 1em;
+  color: $g-color-white;
+  font-size: 3.2rem;
+  line-height: 1;
+  opacity: 0;
+  @include box-sizing(content-box);
+  @include transition(opacity 0.5s $g-transition-timing);
+  @media screen and (max-width: $g-breakpoint-sp) {
+    top: 0.6rem;
+    right: 0.6rem;
+    font-size: 2rem;
+    color: rgba($g-color-black, 0.5);
+  }
+  &::before {
+    display: block;
+    width: 1em;
+    height: 1em;
+    text-shadow: 0 0 2px rgba($g-color-black, 0.5);
+    @include glyph(feather, cross);
+    @media screen and (max-width: $g-breakpoint-sp) {
+      text-shadow: none;
+    }
+  }
+}
+body.is-detail-visible {
+  .p-works-close {
+    visibility: visible;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// 詳細の内容
+// ==================================================
+.p-works-inside {
+  display: block;
+  visibility: hidden;
+  z-index: 12;
+  @include clearfix;
+  body.is-detail-visible & {
+    visibility: visible;
+    position: fixed;
+    top: 1.5rem;
+    right: 5rem;
+    bottom: 1.5rem;
+    left: 5rem;
+    cursor: auto;
+    margin: 0 auto;
+    border-radius: $g-border-radius;
+    max-width: 980px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    // -webkit-overflow-scrolling: touch;
+    background-color: $g-color-white;
+    @include box-shadow(0 1px 1px 1px rgba($g-color-black, 0.4));
+    @include animation(inside-flash 1s);
+    @media screen and (max-width: $g-breakpoint-sp) {
+      top: 1rem;
+      right: 1rem;
+      left: 1rem;
+      top: 1rem;
+    }
+  }
+}
+@include keyframes(inside-flash) {
+  0% {
+    top: 10rem;
+    bottom: 0.5rem;
+    opacity: 0;
+  }
+  25% {
+    top: 10rem;
+    bottom: 0.5rem;
+    opacity: 0;
+  }
+  100% {
+    top: 1.5rem;
+    bottom: 1.5rem;
+    opacity: 1;
+  }
+}
+
+// 詳細表示
+// ==================================================
+.p-works.is-detail {
+  $this: '.p-works';
+  
+  margin-left: 0;
+  width: (100% * $g-design-count);
+  height: 100%;
+  #{$this}__item {
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    width: (100% / $g-design-count);
+  }
+  
+  @for $i from 1 through $g-design-count {
+    &[data-work-item='#{$i}'] {
+      margin-left: -100% * ($i - 1);
+      #{$this}__item:nth-child(#{$i}) {
+        height: auto;
+        overflow-y: auto;
+      }
+    }
+  }
+  @include transition(margin-left 0.5s $g-transition-timing);
+  
+  // p-work
+  .p-work {
+    &__header {
+      padding: 1.5rem 2.5rem;
+      border-bottom: 1px solid rgba($g-color-black, 0.15);
+      @media screen and (max-width: $g-breakpoint-sp) {
+        padding: 0.6rem 1.2rem;
+      }
+    }
+    &__heading {
+      font-size: 1.8rem;
+      font-weight: $g-font-weight-bold;
+      @media screen and (max-width: $g-breakpoint-sp) {
+        font-size: 1.6rem;
+      }
+    }
+    &__detail {
+      margin: 2rem 2.5rem;
+      font-size: 1.6rem;
+      @media screen and (max-width: $g-breakpoint-sp) {
+        margin: 1rem 1.2rem;
+        font-size: 1.5rem;
+      }
+    }
+    &__image {
+      margin: 2rem;
+      border: 1px solid $g-border-color;
+      @media screen and (max-width: $g-breakpoint-sp) {
+        margin: 1rem;
+      }
+    }
+    &__image img {
+      width: 100%;
+    }
+  }
+}

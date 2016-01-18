@@ -1,0 +1,42 @@
+// ==================================================
+// p-cando
+// ==================================================
+.p-cando {
+  display: block;
+  @include clearfix;
+  &__item {
+    float: left;
+    padding: 0 1.5rem 2rem;
+    width: 15rem;
+    height: 20rem;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1.4;
+    &::before {
+      display: block;
+      margin: 0 auto 0.8rem;
+      width: 12rem;
+      padding-top: 12rem;
+      border-radius: 50%;
+      content: '';
+      background-color: $g-color-white;
+      overflow: hidden;
+    }
+    @mixin cando($skill, $size) {
+      &#{&}--#{$skill}::before {
+        background-image: url('/images/skill/skill_#{$skill}.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include background-size($size);
+      }
+    }
+    @include cando(css, 8.4rem);
+    @include cando(sass, 8.4rem);
+    @include cando(style, 11rem);
+    @include cando(document, 11rem);
+    @include cando(device, 11rem);
+    @include cando(website, 11rem);
+    @include cando(analyze, 11rem);
+    @include cando(teacher, 11rem);
+  }
+}

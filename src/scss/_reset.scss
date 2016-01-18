@@ -1,0 +1,71 @@
+// ==================================================
+// Reset
+// ==================================================
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, output,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, menu, nav, section, main, summary,
+time, mark, audio, video, embed {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  background: transparent;
+}
+article, aside, canvas, details, figcaption, figure,
+footer, header, menu, nav, section, main, summary,
+address {
+  display: block;
+}
+strong, em {
+  font-style: normal;
+  font-weight: 600;
+}
+ol, ul {
+  list-style: none;
+}
+li {
+  list-style: inherit;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+  content: none;
+}
+img {
+  vertical-align: bottom;
+}
+table {
+  border-spacing: 0;
+  border-collapse: separate;
+  word-break: break-all;
+  empty-cells: show;
+}
+caption, th {
+  text-align: left;
+}
+input, button, textarea, select {
+  margin: 0;
+  font: inherit;
+}
+input, textarea {
+  padding: 0;
+}
+body * {
+  word-break: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  @include box-sizing(border-box);
+}

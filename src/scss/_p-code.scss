@@ -1,0 +1,38 @@
+// ==================================================
+// p-code
+// ==================================================
+.p-code {
+  display: block;
+  position: relative;
+  padding-left: 13.8rem;
+  padding-bottom: 1.6rem;
+  @media screen and (max-width: $g-breakpoint-sp) {
+    padding-left: 0;
+  }
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    content: '';
+    background-color: $g-border-color-light;
+    background-image: url('/images/skill/skill_octocat.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    @include background-size(10rem);
+    @media screen and (max-width: $g-breakpoint-sp) {
+      display: none;
+    }
+  }
+  &__heading {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    font-weight: $g-font-weight-bold;
+    @media screen and (max-width: $g-breakpoint-sp) {
+      font-size: 1.7rem;
+    }
+  }
+}

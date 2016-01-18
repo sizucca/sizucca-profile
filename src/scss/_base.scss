@@ -1,0 +1,41 @@
+// ==================================================
+// Base
+// ==================================================
+html {
+  font-size: 62.5%;
+}
+body {
+  color: $g-text-color;
+  font-family: $g-font-family;
+  font-weight: $g-font-weight-normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  background-color: $g-bg-color;
+  -webkit-text-size-adjust: 100%;
+}
+body.is-no-scroll {
+  position: relative;
+  padding-right: 16px;
+  overflow: hidden;
+}
+body input,
+body button,
+body select,
+body textarea {
+  font-family: $g-font-family;
+}
+a {
+  color: $g-link-color;
+  text-decoration: underline;
+  @include transition(0.4s $g-transition-timing);
+}
+a:hover,
+a:active {
+  color: $g-key-color;
+}
+
+// Webfont
+@include webfont(awesome);
+@include webfont(entypo);
+@include webfont(feather);

@@ -1,0 +1,92 @@
+// ==================================================
+// p-global-header
+// ==================================================
+.p-global-header {
+  $left: 14.2rem;
+  
+  position: relative;
+  z-index: 1;
+  padding-left: $left;
+  @include clearfix;
+  @media screen and (max-width: $g-breakpoint-sp) {
+    padding-left: 0;
+  }
+  &::before {
+    display: block;
+    position: absolute;
+    top: -9rem;
+    left: 0;
+    border: $g-border-width solid $g-color-white;
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    content: '';
+    background-color: $g-color-white;
+    background-image: url(/images/profile/icon.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include box-shadow(0 0 1px 1px rgba(0, 0, 0, 0.2));
+    @include background-size(100%);
+    @include transition(top 0.5s $g-transition-timing);
+    @media screen and (min-width: $g-breakpoint-sp) {
+      body.is-scroll & {
+        top: 50%;
+        margin-top: -1.9rem;
+        border: none;
+        width: 3.6rem;
+        height: 3.6rem;
+      }
+    }
+    @media screen and (max-width: $g-breakpoint-sp) {
+      top: -12.4rem;
+      left: 50%;
+      margin-left: -4rem;
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+  &__heading {
+    position: absolute;
+    top: -1em;
+    left: 0;
+    margin-top: -1rem;
+    margin-left: $left;
+    color: $g-color-white;
+    font-weight: $g-font-weight-bold;
+    font-size: 3rem;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    line-height: 1;
+    @include transition(top 0.5s $g-transition-timing);
+    @media screen and (min-width: $g-breakpoint-sp) {
+      body.is-scroll & {
+        top: 50%;
+        bottom: 0;
+        left: 0;
+        margin-top: -0.56em;
+        margin-left: 4.6rem;
+        color: $g-gnav-text-color;
+        font-weight: $g-font-weight-normal;
+        font-size: 1.8rem;
+        text-shadow: none;
+      }
+    }
+    @media screen and (max-width: $g-breakpoint-sp) {
+      margin-left: 0;
+      width: 100%;
+      font-size: 2.2rem;
+      text-align: center;
+    }
+  }
+  &__nav-bar {
+    position: relative;
+    left: 0;
+    @include transition(left 0.5s $g-transition-timing);
+    @media screen and (min-width: $g-breakpoint-sp) {
+      body.is-scroll & {
+        float: right;
+        left: 300px;
+        margin-right: 300px;
+      }
+    }
+  }
+}

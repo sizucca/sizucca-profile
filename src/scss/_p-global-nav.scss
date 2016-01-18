@@ -1,0 +1,60 @@
+// ==================================================
+// p-global-nav
+// ==================================================
+.p-global-nav {
+  display: table;
+  overflow: hidden;
+  @media screen and (max-width: $g-breakpoint-sp) {
+    margin: 0 auto;
+  }
+  &__item {
+    display: table-cell;
+    padding-right: 2em;
+    font-size: 1.6rem;
+    line-height: 1;
+    &:last-child {
+      padding-right: 0;
+    }
+    @media screen and (min-width: $g-breakpoint-sp) {
+      body.is-scroll & {
+        font-size: 1.5rem;
+      }
+    }
+    @media screen and (max-width: $g-breakpoint-sp) {
+      padding-right: 1.6em;
+      font-size: 1.5rem;
+    }
+  }
+  &__target {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding: 1em 0 1.1em;
+    color: inherit;
+    text-align: left;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @include transition(0.2s $g-transition-timing);
+    &::after {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 0;
+      content: '';
+      background-color: $g-key-color;
+      @include transition(0.2s $g-transition-timing);
+    }
+    &:hover::after {
+      height: $g-border-width;
+    }
+    &.is-active::after {
+      height: $g-border-width;
+    }
+    &.is-active:hover {
+      color: inherit;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+// ==================================================
+// p-skill
+// ==================================================
+.p-skill-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.p-skill {
+  $this          : &;
+  $languag-count : $g-skill-count-languag;
+  $languag-color : $g-skill-color-languag;
+  $tool-count    : $g-skill-count-tool;
+  $tool-color    : $g-skill-color-tool;
+  $os-count      : $g-skill-count-os;
+  $os-color      : $g-skill-color-os;
+  
+  margin-bottom: 2rem;
+  width: 100%;
+  min-width: 540px;
+  @media screen and (max-width: $g-breakpoint-sp) {
+    font-size: 1.4rem;
+    padding: 0 $g-l-padding-min $g-l-padding-min;
+    border: $g-border-width solid $g-color-white;
+    background-color: rgba($g-color-white, 0.5);
+  }
+  thead th {
+    color: $g-title-color;
+    font-size: 0.92em;
+  }
+  th {
+    white-space: nowrap;
+  }
+  th, td {
+    padding: 1rem 0.8rem;
+  }
+  th:first-child {
+    padding-left: 0.2rem;
+  }
+  &__type {
+    th, td {
+      border-bottom: 1px solid $g-border-color-light;
+    }
+    &#{&}--language {
+      th {
+        border-bottom-color: $g-key-color;
+      }
+      &:nth-child(1) th,
+      &:nth-child(1) td {
+        border-top: 2px solid $g-key-color;
+      }
+      &:nth-child(#{$languag-count}) th,
+      &:nth-child(#{$languag-count}) td {
+        border-bottom: none;
+      }
+    }
+    &#{&}--tool {
+      th {
+        border-bottom-color: $tool-color;
+      }
+      &:nth-child(#{$languag-count + 1}) th,
+      &:nth-child(#{$languag-count + 1}) td {
+        border-top: 2px solid $tool-color;
+      }
+      &:nth-child(#{$languag-count + $tool-count}) th,
+      &:nth-child(#{$languag-count + $tool-count}) td {
+        border-bottom: none;
+      }
+    }
+    &#{&}--os {
+      th {
+        border-bottom-color: $os-color;
+      }
+      &:nth-child(#{$languag-count + $tool-count + 1}) th,
+      &:nth-child(#{$languag-count + $tool-count + 1}) td {
+        border-top: 2px solid $os-color;
+      }
+    }
+  }
+  &__level {
+    display: block;
+    position: relative;
+    width: 5em;
+    height: 1em;
+    font-size: 1.6rem;
+    line-height: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5em;
+      height: 1em;
+      line-height: 1;
+      color: $g-border-color-light;
+      @include glyph(awesome, star);
+      content: '\f005\f005\f005\f005\f005';
+    }
+    #{$this}__type--language &::after {
+      color: $languag-color;
+    }
+    #{$this}__type--tool &::after {
+      color: $tool-color;
+    }
+    #{$this}__type--os &::after {
+      color: $os-color;
+    }
+    &#{&}--1::after {
+      content: '\f005';
+    }
+    &#{&}--2::after {
+      content: '\f005\f005';
+    }
+    &#{&}--3::after {
+      content: '\f005\f005\f005';
+    }
+    &#{&}--4::after {
+      content: '\f005\f005\f005\f005';
+    }
+    &#{&}--5::after {
+      content: '\f005\f005\f005\f005\f005';
+    }
+    > span {
+      display: block;
+      text-indent: 100%;
+    }
+  }
+}

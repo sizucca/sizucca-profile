@@ -1,0 +1,28 @@
+// ==================================================
+// p-banners
+// ==================================================
+.p-banners {
+  display: block;
+  @include clearfix;
+  &__item {
+    float: left;
+    margin: 0 1.33% 1.33% 0;
+    width: 24%;
+    overflow: hidden;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    @media screen and (max-width: $g-breakpoint-sp) {
+      margin-right: 2%;
+      margin-bottom: 2%;
+      width: 49%;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

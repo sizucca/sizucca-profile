@@ -1,0 +1,319 @@
+section#js-setion-skill.p-block.js-block(data-block-id='skill')
+  h2.p-block__heading1
+    | Skill &amp; Tool
+
+  //- 得意分野・経験
+  section.p-block__contents
+    h3.p-block__heading2
+      | 得意分野・経験
+    ul.p-cando
+      li.p-cando__item.p-cando__item--css
+        | CSS設計
+      li.p-cando__item.p-cando__item--sass
+        | Sassフレームワーク作成
+      li.p-cando__item.p-cando__item--style
+        | スタイルガイド作成
+      li.p-cando__item.p-cando__item--document
+        | ドキュメント作成
+      li.p-cando__item.p-cando__item--device
+        | UI設計/デザイン
+      li.p-cando__item.p-cando__item--website
+        | モックアップ作成
+      li.p-cando__item.p-cando__item--analyze
+        | 効果測定
+      li.p-cando__item.p-cando__item--teacher
+        | 新人教育
+
+  //- 言語・ツール
+  section.p-block__contents
+    h3.p-block__heading2
+      | 言語・ツール
+    .p-skill-wrapper
+      table.p-skill
+        thead
+          tr
+            th(scope='col') 名称
+            th(scope='col') 経験年数（実務）
+            th(scope='col') レベル
+            th(scope='col') 備考
+        tbody
+          tr.p-skill__type.p-skill__type--language
+            th(scope='row')
+              | HTML
+            td
+              | 17年（15年）
+            td
+              span.p-skill__level.p-skill__level--5
+                span レベル5
+            td
+              p HTML4.01 / XHTML1.0 / HTML5 での記述が可能。
+              p Microdataは知識レベル。
+          tr.p-skill__type.p-skill__type--language
+            th(scope='row')
+              | CSS
+            td
+              | 15年（15年）
+            td
+              span.p-skill__level.p-skill__level--5
+                span レベル5
+            td
+              p オブジェクト指向CSS（SMACSS / FLOCSS）での設計可能。
+              p BEM（MindBEMding）記法での記述可能。
+              p スマートフォン / タブレット 最適化や、CSS3の新プロパティに関しても、実務レベルで記述可能。
+          tr.p-skill__type.p-skill__type--language
+            th(scope='row')
+              | Sass（SCSS）
+            td
+              | 2年（1年）
+            td
+              span.p-skill__level.p-skill__level--5
+                span レベル5
+            td
+              p Sass3.2以上で、@mixin、@functionなども、実務レベルで記述可能。
+              p 独自フレームワークの作成経験あり。
+          tr.p-skill__type.p-skill__type--language
+            th(scope='row')
+              | JavaScript
+            td
+              | 4年（1年）
+            td
+              span.p-skill__level.p-skill__level--3
+                span レベル3
+            td
+              p DOM操作はjQueryの使用が必要なレベル。
+              p
+                | プロトタイプベースでの記述可能（簡易なレベル）。
+                | ※
+                a(href='https://github.com/sizucca/sample-leftnavi/blob/review/leftnavi.js' target='_blank')
+                  | コードサンプル
+              p フレームワークは、React.jsを演習レベルで触った経験あり。
+          tr.p-skill__type.p-skill__type--language
+            th(scope='row')
+              | Ruby
+            td
+              | 8年（8年）
+            td
+              span.p-skill__level.p-skill__level--2
+                span レベル2
+            td
+              p Ruby on Railsを使用して、簡単なアプリケーションが作成できるレベル。
+              p 経験は8年となっているが、半年前まではRailsの仕組みを十分に理解せず、適当にviewのみを実装していただけなので、view以外は知識レベル程度。
+              p viewは、erb / slim 記法での記述可能。
+              p slimは、社内導入と、ドキュメントの作成経験あり。
+          tr.p-skill__type.p-skill__type--language
+            th(scope='row')
+              | PHP
+            td
+              | 5年（3年）
+            td
+              span.p-skill__level.p-skill__level--2
+                span レベル2
+            td
+              p 前職で、自身で作成したフレームワークによる自社サービスの制作、運用経験あり。
+              p 近年では、WordPressのカスタマイズ程度の実務経験。
+          tr.p-skill__type.p-skill__type--language
+            th(scope='row')
+              | SQL
+            td
+              | 4年（4年）
+            td
+              span.p-skill__level.p-skill__level--1
+                span レベル1
+            td
+              p ほとんど前職での経験のため、近年での実務経験は無し。
+              p PostgreSQL、MySQL共に、基本的なSQL文が書けるレベル。
+          tr.p-skill__type.p-skill__type--tool
+            th(scope='row')
+              | Sublime Text
+            td
+              | 4年（4年）
+            td
+              span.p-skill__level.p-skill__level--5
+                span レベル5
+            td
+              p コーディングのメインツール。
+              p トラブルシューティングや、他人に教える事が可能なレベル。
+          tr.p-skill__type.p-skill__type--tool
+            th(scope='row')
+              | Vim
+            td
+              | 2年（2年）
+            td
+              span.p-skill__level.p-skill__level--2
+                span レベル2
+            td
+              p 基本的な操作には困らないレベル。
+          tr.p-skill__type.p-skill__type--tool
+            th(scope='row')
+              | PhotoShop
+            td
+              | 15年（15年）
+            td
+              span.p-skill__level.p-skill__level--4
+                span レベル4
+            td
+              p グラフィックソフトのメインツール。
+              p デザイナー職として、困らないレベルで使用可能。
+          tr.p-skill__type.p-skill__type--tool
+            th(scope='row')
+              | Illustrator
+            td
+              | 15年（15年）
+            td
+              span.p-skill__level.p-skill__level--3
+                span レベル3
+            td
+              p 基本的な操作には困らないレベル。
+          tr.p-skill__type.p-skill__type--tool
+            th(scope='row')
+              | Flash
+            td
+              | 3年（3年）
+            td
+              span.p-skill__level.p-skill__level--2
+                span レベル2
+            td
+              p ActionScript2.0の経験のみ（3.0は知識レベル）。
+              p 前職で、アニメーションバナーなどの制作経験あり。
+          tr.p-skill__type.p-skill__type--tool
+            th(scope='row')
+              | iTerm
+            td
+              | 4年（なし）
+            td
+              span.p-skill__level.p-skill__level--4
+                span レベル4
+            td
+              p 基本的な操作には困らないレベル。
+              p 使用シェルはzsh（oh-my-zsh）。
+              p 職場はWindowsなので、Rloginを使用。
+          tr.p-skill__type.p-skill__type--tool
+            th(scope='row')
+              | git
+            td
+              | 3年（3年）
+            td
+              span.p-skill__level.p-skill__level--3
+                span レベル3
+            td
+              p 基本的な操作には困らないレベル。
+          tr.p-skill__type.p-skill__type--tool
+            th(scope='row')
+              | Office
+            td
+              | 15年（15年）
+            td
+              span.p-skill__level.p-skill__level--4
+                span レベル4
+            td
+              p Word / Excel / PowerPoint など、業務レベルで問題なく使用可能。
+          tr.p-skill__type.p-skill__type--os
+            th(scope='row')
+              | Windows
+            td
+              | 19年（15年）
+            td
+              span.p-skill__level.p-skill__level--4
+                span レベル4
+            td
+              p 業務レベルで問題なく使用可能。
+          tr.p-skill__type.p-skill__type--os
+            th(scope='row')
+              | OS X
+            td
+              | 4年（なし）
+            td
+              span.p-skill__level.p-skill__level--4
+                span レベル4
+            td
+              p 業務レベルで問題なく使用可能。
+
+  //- コード
+  section.p-block__contents
+    h3.p-block__heading2
+      | コード
+    section.p-code
+      h4.p-code__heading
+        | 会議室予約システム
+      dl.c-description
+        dt
+          | 制作時期
+        dd
+          | 2015年 10月
+        dt
+          | 目的
+        dd
+          p
+            span.u-em Ruby on Rails
+            | の勉強のため。
+          ul.u-ul
+            li
+              | 会社の制作環境に合わせる必要があったため、
+              span.u-em Ruby on Rails 3
+              | で制作。
+            li Rails以外（UIデザインなど）はかなり適当。
+        dt
+          | ページ（Heroku）
+        dd
+          p
+            a(href='https://meeting-schedule.herokuapp.com/', target='_blank')
+              | https://meeting-schedule.herokuapp.com/
+          .c-description__ex
+            p
+              label(for='heroku-username')
+                | USERNAME
+              input#heroku-username(type='text', value='guest2016', readonly='')
+            p
+              label(for='heroku-password')
+                | PASSWORD
+              input#heroku-password(type='text', value='kwkm2016', readonly='')
+        dt
+          | コード（GitHub）
+        dd
+          p
+            a(href='https://github.com/sizucca/meeting-schedule', target='_blank')
+              | https://github.com/sizucca/meeting-schedule
+    section.p-code
+      h4.p-code__heading
+        | 自己紹介ページ
+      dl.c-description
+        dt
+          | 制作時期
+        dd
+          | 2016年 1月
+        dt
+          | 目的
+        dd
+          p
+            | 自己紹介作成のため。
+          ul.u-ul
+            li
+              | 12日を迎えたので、
+              span.u-em
+                | IE8対応は一切無し
+              | でコーディング。
+            li
+              | レスポンシブ。
+            li
+              | 機会がなく、使用経験のなかった
+              span.u-em gulp
+              | 、
+              span.u-em Jade
+              | を初使用。
+            li
+              span.u-em
+                | Sass（CSS）フレームワーク
+              | は、
+              a(href='https://github.com/thoughtbot/bourbon' target='_blank')
+                | Bourbon
+              | を元にした自作を使用。
+        dt
+          | ページ
+        dd
+          | ※このページ
+        dt
+          | コード（GitHub）
+        dd
+          p
+            a(href='https://github.com/sizucca/sizucca-profile', target='_blank')
+              | https://github.com/sizucca/sizucca-profile

@@ -1,0 +1,61 @@
+// ==================================================
+// Variables
+// ==================================================
+// 固定color
+$g-color-black   : #000;
+$g-color-white   : #fff;
+
+// 各種color
+$g-text-color   : #4e4d47;
+$g-title-color  : #2d2c28;
+$g-link-color   : #4183c4;
+$g-key-color    : #cf4074;
+$g-bg-color     : #fdf6e3;
+$g-border-color : #bbb39c;
+$g-border-color-light : rgba($g-border-color, 0.6);
+// gnav
+$g-gnav-text-color : #b5b5b0;
+$g-gnav-bg-color   : #2e2e2e;
+// skill
+$g-skill-color-languag : $g-key-color;
+$g-skill-color-tool    : #92a800;
+$g-skill-color-os      : #f9a010;
+
+
+// breakpoint
+$g-breakpoint-min : 320px;  // スマホ（縦）
+$g-breakpoint-sp  : 640px;  // スマホ
+$g-breakpoint-tb  : 800px;  // タブレット
+$g-breakpoint-max : 1280px; // 固定幅になる大きさ
+
+// transition-timing-function
+$g-transition-timing : cubic-bezier(0, 0, 0.2, 1);
+
+// font-family
+$g-font-family: 'Lato', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'ＭＳ Ｐゴシック', Arial, sans-serif;
+
+// font-weight
+$g-font-weight-thin:   300;
+$g-font-weight-normal: 400;
+$g-font-weight-bold:   700;
+
+// margin-bottom
+$g-margin-bottom: 1.6rem;
+
+// layout-padding
+$g-l-padding-min: 10px;
+$g-l-padding-sp:  15px;
+$g-l-padding-max: 30px;
+
+// border-width
+$g-border-width: 0.4rem;
+
+// border-radius
+$g-border-radius: 3px;
+
+// データの内容数
+$g-design-count        : 15;
+$g-skill-count-languag : 7;
+$g-skill-count-tool    : 8;
+$g-skill-count-os      : 2;
+

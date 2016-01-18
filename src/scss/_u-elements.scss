@@ -1,0 +1,72 @@
+// ==================================================
+// Elements
+// ==================================================
+// p
+// ==================================================
+.u-p {
+  margin-bottom: $g-margin-bottom;
+}
+// ul, ol
+// ==================================================
+.u-ul {
+  margin-bottom: $g-margin-bottom;
+  padding-left: 2em;
+  list-style-type: disc;
+}
+.u-ol {
+  margin-bottom: $g-margin-bottom;
+  padding-left: 2em;
+  list-style-type: decimal;
+}
+.u-ul li,
+.u-ol li {
+  margin-bottom: 0.3em;
+  list-style-type: inherit;
+}
+.u-ul ul,
+.u-ul ol,
+.u-ol ul,
+.u-ol ol {
+  margin-top: 0.2em;
+  margin-bottom: 0;
+}
+.u-ul ul,
+.u-ol ul {
+  list-style-type: circle;
+}
+.u-ul ol,
+.u-ol ol {
+  list-style-type: lower-roman;
+}
+.u-ul ul ul,
+.u-ul ol ul,
+.u-ol ul ul,
+.u-ol ol ul {
+  list-style-type: square;
+}
+.u-ul ul ol,
+.u-ul ol ol,
+.u-ol ul ol,
+.u-ol ol ol {
+  list-style-type: lower-alpha;
+}
+// em
+// ==================================================
+.u-em {
+  display: inline-block;
+  position: relative;
+  margin-right: 0.1em;
+  margin-left: 0.1em;
+  padding-right: 0.2em;
+  padding-left: 0.2em;
+}
+.u-em::before {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0.2em;
+  left: 0;
+  height: 0.4em;
+  content: '';
+  background-color: rgba($g-key-color, 0.3);
+}

@@ -1,0 +1,35 @@
+// ==================================================
+// c-description
+// ==================================================
+.c-description {
+  margin-bottom: $g-margin-bottom;
+  dt {
+    margin-bottom: ($g-margin-bottom / 2);
+    padding-left: 1rem;
+    border-left: 2px solid $g-border-color-light;
+    color: $g-title-color;
+    line-height: 1.2;
+  }
+  dd {
+    margin-bottom: $g-margin-bottom;
+    margin-left: 2px;
+    padding-left: 1rem;
+    > p {
+      margin-bottom: ($g-margin-bottom / 2);
+    }
+  }
+  &__ex {
+    font-size: 1.3rem;
+    label::after {
+      margin-right: 0.2em;
+      content: ' : ';
+    }
+    input {
+      outline: none;
+      border: none;
+      color: $g-text-color;
+      letter-spacing: 0.1em;
+      background-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+// ==================================================
+// p-block
+// ==================================================
+.p-block {
+  border-bottom: 1px solid $g-border-color;
+  &__heading1 {
+    margin: 3rem 0;
+    color: $g-title-color;
+    font-size: 2.8rem;
+    font-weight: $g-font-weight-bold;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    @media screen and (max-width: $g-breakpoint-sp) {
+      margin: 2rem 0;
+      font-size: 2.2rem;
+    }
+  }
+  &__heading2 {
+    margin: 0 0 2rem;
+    color: $g-title-color;
+    font-size: 2.2rem;
+    font-weight: $g-font-weight-bold;
+    letter-spacing: 0.06em;
+    line-height: 1;
+    @media screen and (max-width: $g-breakpoint-sp) {
+      margin: 0 0 1.5rem;
+      font-size: 1.8rem;
+    }
+  }
+  &__contents {
+    padding: 0 0 $g-margin-bottom;
+  }
+}

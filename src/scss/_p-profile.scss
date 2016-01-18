@@ -1,0 +1,12 @@
+// ==================================================
+// p-profile
+// ==================================================
+.p-profile {
+  margin-bottom: $g-margin-bottom;
+  padding: 0.5em 1em;
+  border-left: $g-border-width solid $g-key-color;
+  &__name {
+    margin-bottom: $g-margin-bottom;
+    font-size: 1.7rem;
+  }
+}
