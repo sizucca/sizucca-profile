@@ -256,9 +256,11 @@ $(function(){
         var itemNum = parseInt($detailInside.find(works).attr(ATTR_WORK_ITEM), 10);
         if(itemNum > 1){
           var prevNum = itemNum - 1;
-          $detailInside.find(works).attr(ATTR_WORK_ITEM, prevNum).on(listenEvents.join(' '), function(){
-            arrowPrevNext(prevNum);
-            clickFlug = true;
+          $detailInside.animate({scrollTop: 0}, 100, function(){
+            $detailInside.find(works).attr(ATTR_WORK_ITEM, prevNum).on(listenEvents.join(' '), function(){
+              arrowPrevNext(prevNum);
+              clickFlug = true;
+            });
           });
         }
       }
